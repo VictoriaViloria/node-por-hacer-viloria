@@ -9,7 +9,17 @@ const guardarDB = () => {
         if (err) throw new Error('no sé pudo grabar', err)
     });
 }
+
+const cargarDB = () => {
+    try {
+        listadoPorHacer = require('../db/data.json');
+    } catch (error) {
+        listadoPorHacer = [];
+    }
+}
+
 const crear = (descripcion) => {
+    cargarDB();
 
     let porHacer = {
         descripcion,
