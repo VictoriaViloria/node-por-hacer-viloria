@@ -16,7 +16,6 @@ const cargarDB = () => {
 }
 const crear = (descripcion) => {
     cargarDB();
-
     let porHacer = {
         descripcion,
         completado: false
@@ -41,10 +40,23 @@ const actualizar = (descripcion, completado = true) => {
     } else {
         return false;
     }
-
+}
+const borrar = (descripcion) => {
+    cargarDB();
+    let nuevoListado = listadoPorHacer.filter(tarea => {
+        return tarea.descripcion !== descripcion
+    });
+    if (listadoPorHacer.length === nuevoListado.length) {
+        return false;
+    } else {
+        listadoPorHacer = nuevoListado;
+        guardarDB();
+        return true;
+    }
 }
 module.exports = {
     crear,
     getListado,
-    actualizar
+    actualizar,
+    borrar
 }
