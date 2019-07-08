@@ -23,6 +23,8 @@ switch (comando) {
         console.log('mostrar todas las tareas por hacer');
         break;
     case 'actualizar':
+        let actualizado = porHacer.actualizar(argv.descripcion, argv.completado);
+        console.log(actualizado);
         console.log('actualiza una tarea por hacer');
         break;
     default:
