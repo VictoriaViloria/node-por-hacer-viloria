@@ -9,7 +9,6 @@ const guardarDB = () => {
         if (err) throw new Error('no sé pudo grabar', err)
     });
 }
-
 const cargarDB = () => {
     try {
         listadoPorHacer = require('../db/data.json');
@@ -17,7 +16,6 @@ const cargarDB = () => {
         listadoPorHacer = [];
     }
 }
-
 const crear = (descripcion) => {
     cargarDB();
 
@@ -29,6 +27,11 @@ const crear = (descripcion) => {
     guardarDB();
     return porHacer;
 }
+const getListado = () => {
+    cargarDB();
+    return listadoPorHacer;
+}
 module.exports = {
-    crear
+    crear,
+    getListado
 }

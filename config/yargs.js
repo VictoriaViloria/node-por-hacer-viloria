@@ -17,6 +17,18 @@ const argv = require('yargs') //requiero el paquete YARGS
             desc: 'Marca como completado o pendiente la tarea'
         }
     })
+    // .command('listar', 'muestra el listado de tareas', {
+    //     descripcion: {
+    //         demand: true,
+    //         alias: 'l',
+    //         desc: 'muestra listado'
+    //     },
+    //     completado: {
+    //         default: true,
+    //         alias: 'c',
+    //         desc: 'presenta el listado de tareas'
+    //     }
+    // })
     .help()
     .argv; //regresar el argv
 //para que trabaje necesitamos expprtarlo
