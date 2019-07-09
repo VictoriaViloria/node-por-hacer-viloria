@@ -17,6 +17,9 @@ const argv = require('yargs') //requiero el paquete YARGS
         descripcion,
         completado
     })
+    .command('listar', 'lista las tareas que son verdaderas o falsas', {
+        completado
+    })
     .command('borrar', 'borra una tarea que envian con el parametro descripcion', {
         descripcion
     })

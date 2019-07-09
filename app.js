@@ -13,14 +13,14 @@ switch (comando) {
         console.log(tarea);
         break;
     case 'listar':
-        let listado = porHacer.getListado(); //se manda a llamar como funcion
+        let listado = porHacer.getListado(argv.completado); //se manda a llamar como funcion
         for (let tarea of listado) {
             console.log('==== Por Hacer ====='.green);
             console.log('descripcion: ', tarea.descripcion);
             console.log('Estado: ', tarea.completado);
             console.log('===================='.green);
         };
-        console.log('mostrar todas las tareas por hacer');
+        // console.log('mostrar todas las tareas por hacer');
         break;
     case 'actualizar':
         let actualizado = porHacer.actualizar(argv.descripcion, argv.completado);
@@ -31,6 +31,8 @@ switch (comando) {
         let borrado = porHacer.borrar(argv.descripcion); //le voy a mandar el argv.descripcion
         console.log(borrado);
         break;
+    case 'listarElegir':
+
     default:
         console.log('comando no es reconocido');
         break;
